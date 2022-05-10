@@ -20,10 +20,11 @@ class BiometricAuthentication extends StatefulWidget {
 
 class _BiometricAuthenticationState extends State<BiometricAuthentication> {
   final _localAuthentication = LocalAuthentication();
-  bool _isUserAuthorized = true;
+  bool _isUserAuthorized = false;
 
   Future<void> authenticateUser() async {
-    bool isAuthorized = false;
+    bool isAuthorized = true;
+    /*
     try {
       isAuthorized = await _localAuthentication.authenticate(
         localizedReason: "Please authenticate to see account balance",
@@ -37,7 +38,7 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
         // Handle this exception here.
       }
     }
-
+  */
     if (!mounted) return;
 
     setState(() {
@@ -66,15 +67,20 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
         }));
   }
 
-  int greeting = 5;
-  @override
-  void initState() {
-    super.initState();
-    Timer(const Duration(seconds: 5), (){
-      greeting -= 1;
-      setState(() {
+  int greeting = 10;
+
+  void _startCountDown() {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (greeting <= 0){
+        setState(() {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage()));
-      });
+        });
+      }
+      else {
+        setState(() {
+          greeting--;
+        });
+      }
     });
   }
 
@@ -110,10 +116,10 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
                         repeat: false,
                       ),
                       Text(
-                        "Home page dans $greeting",
+                        'page d\'accueil dans $greeting',
                         style: GoogleFonts.bebasNeue(
                           textStyle: const TextStyle(
-                            fontSize: 65,
+                            fontSize: 35,
                             color: Colors.black,
                           ),
                         ),
@@ -142,8 +148,9 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
                           width: 250,
                           child: TextButton(
                             onPressed: () {
-                              //authenticateUser();
+                              authenticateUser();
                               //postData();
+                              _startCountDown();
                             },
                             child: Text(
                               "Autoriser",
