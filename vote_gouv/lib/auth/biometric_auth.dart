@@ -24,7 +24,6 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
 
   Future<void> authenticateUser() async {
     bool isAuthorized = true;
-    /*
     try {
       isAuthorized = await _localAuthentication.authenticate(
         localizedReason: "Please authenticate to see account balance",
@@ -38,7 +37,6 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
         // Handle this exception here.
       }
     }
-  */
     if (!mounted) return;
 
     setState(() {
@@ -71,7 +69,7 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
 
   void _startCountDown() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (greeting <= 0){
+      if (greeting <= 0) {
         setState(() {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage()));
         });

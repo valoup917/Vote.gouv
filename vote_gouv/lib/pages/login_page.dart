@@ -115,21 +115,10 @@ class _LoginState extends State<Login> {
                         const Color.fromRGBO(97, 67, 133, 1)),
                   ),
                   onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          // Retrieve the text the that user has entered by using the
-                          // TextEditingController.
-                          content: Text(prenomController.text),
-                        );
-                      },
-                    );
-                    /*Navigator.push(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (_) => const ConnectedPage()));
-                    */
                   },
                   child: const Text(
                     'Login',
