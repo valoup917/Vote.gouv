@@ -67,13 +67,13 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
         }));
   }
 
-  int greeting = 10;
+  int greeting = 8;
 
   void _startCountDown() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
       if (greeting <= 0){
         setState(() {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage()));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage()));
         });
       }
       else {
@@ -136,6 +136,7 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.bebasNeue(
                             textStyle: const TextStyle(
+                              letterSpacing: 0.8,
                               fontSize: 45,
                               color: Colors.black,
                             ),
@@ -144,8 +145,8 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
                       ),
                       const SizedBox(height: 170),
                       SizedBox(
-                          height: 65,
-                          width: 250,
+                          height: 75,
+                          width: 260,
                           child: TextButton(
                             onPressed: () {
                               authenticateUser();

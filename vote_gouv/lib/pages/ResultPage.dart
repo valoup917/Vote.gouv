@@ -32,7 +32,7 @@ class _ResultPageState extends State<ResultPage> {
           style: GoogleFonts.bebasNeue(
             textStyle: const TextStyle(
               letterSpacing: 6,
-              fontSize: 45,
+              fontSize: 42,
               color: Colors.black,
               fontWeight: FontWeight.w900,
             ),

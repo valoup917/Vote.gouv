@@ -31,7 +31,7 @@ class ConnectedPage extends StatelessWidget {
                   style: GoogleFonts.bebasNeue(
                     textStyle: const TextStyle(
                       letterSpacing: 6,
-                      fontSize: 45,
+                      fontSize: 42,
                       color: Colors.black,
                       fontWeight: FontWeight.w900,
                     ),
@@ -176,6 +176,15 @@ class ConnectedPage extends StatelessWidget {
                     imagelink: const AssetImage("assets/images/zemour.jpg"),
                     name: 'Éric Zemmour',
                     color: pBlackBlue,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const BiometricAuthentication()));
+                    }),
+                    const SizedBox(height: 15),
+                    MyBlankCard(
                     onTap: () {
                       Navigator.push(
                           context,

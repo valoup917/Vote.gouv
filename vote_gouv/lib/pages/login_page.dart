@@ -11,6 +11,18 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final prenomController = TextEditingController();
+  final nomController = TextEditingController();
+  final nsecuController = TextEditingController();
+
+  @override
+  void dispose() {
+    prenomController.dispose();
+    nomController.dispose();
+    nsecuController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,35 +66,36 @@ class _LoginState extends State<Login> {
                 ),
               ),
               const SizedBox(height: 85),
-              const Padding(
+              Padding(
                 //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: prenomController,
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Prénom',
                       hintText: 'ex: Éric'),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(
+              Padding(
+                padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 35, bottom: 0),
                 //padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
-                  obscureText: false,
-                  decoration: InputDecoration(
+                  controller: nomController,
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Nom',
                       hintText: 'ex: Zemmour'),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(
+              Padding(
+                padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 35, bottom: 0),
                 //padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
-                  obscureText: false,
-                  decoration: InputDecoration(
+                  controller: nsecuController,
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'N° de sécurité sociale',
                       hintText: '1 85 05 78 006 084 36'),
@@ -96,16 +109,27 @@ class _LoginState extends State<Login> {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                            )),
+                      borderRadius: BorderRadius.circular(20.0),
+                    )),
                     backgroundColor: MaterialStateProperty.all(
                         const Color.fromRGBO(97, 67, 133, 1)),
                   ),
                   onPressed: () {
-                    Navigator.push(
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          // Retrieve the text the that user has entered by using the
+                          // TextEditingController.
+                          content: Text(prenomController.text),
+                        );
+                      },
+                    );
+                    /*Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (_) => const ConnectedPage()));
+                    */
                   },
                   child: const Text(
                     'Login',

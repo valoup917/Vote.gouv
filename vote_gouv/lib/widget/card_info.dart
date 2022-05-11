@@ -41,3 +41,41 @@ class MyCard extends StatelessWidget {
     );
   }
 }
+
+class MyBlankCard extends StatelessWidget {
+  const MyBlankCard({ Key? key, required this.onTap }) : super(key: key);
+
+  final void Function() onTap;
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Ink.image(
+              image: const AssetImage("assets/images/white.jpg"),
+              child: InkWell(
+                onTap: onTap,
+              ),
+              height: 180,
+              fit: BoxFit.cover,
+              colorFilter: const ColorFilter.mode(Color.fromARGB(255, 236, 236, 232), BlendMode.srcOver)
+            ),
+            Text( 
+              'Vote Blanc',
+              style: GoogleFonts.bebasNeue(
+                textStyle: const TextStyle(
+                  fontSize: 34,
+                  color: Color.fromARGB(255, 35, 35, 35),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
