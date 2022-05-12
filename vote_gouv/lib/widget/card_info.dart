@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCard extends StatelessWidget {
-  const MyCard({ Key? key, required this.imagelink, required this.name, required this.color, required this.onTap }) : super(key: key);
+  const MyCard(
+      {Key? key,
+      required this.imagelink,
+      required this.name,
+      required this.color,
+      required this.onTap, required this.id})
+      : super(key: key);
 
   final AssetImage imagelink;
   final String name;
   final Color color;
   final void Function() onTap;
+  final int id;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -25,17 +32,16 @@ class MyCard extends StatelessWidget {
               ),
               height: 180,
               fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(color, BlendMode.srcOver)
-            ),
-            Text(
-              name,
-              style: GoogleFonts.bebasNeue(
-                textStyle: const TextStyle(
-                  fontSize: 34,
-                  color: Colors.white,
-                ),
+              colorFilter: ColorFilter.mode(color, BlendMode.srcOver)),
+          Text(
+            name,
+            style: GoogleFonts.bebasNeue(
+              textStyle: const TextStyle(
+                fontSize: 34,
+                color: Colors.white,
               ),
             ),
+          ),
         ],
       ),
     );
@@ -43,7 +49,7 @@ class MyCard extends StatelessWidget {
 }
 
 class MyBlankCard extends StatelessWidget {
-  const MyBlankCard({ Key? key, required this.onTap }) : super(key: key);
+  const MyBlankCard({Key? key, required this.onTap}) : super(key: key);
 
   final void Function() onTap;
   @override
@@ -63,17 +69,17 @@ class MyBlankCard extends StatelessWidget {
               ),
               height: 180,
               fit: BoxFit.cover,
-              colorFilter: const ColorFilter.mode(Color.fromARGB(255, 236, 236, 232), BlendMode.srcOver)
-            ),
-            Text( 
-              'Vote Blanc',
-              style: GoogleFonts.bebasNeue(
-                textStyle: const TextStyle(
-                  fontSize: 34,
-                  color: Color.fromARGB(255, 35, 35, 35),
-                ),
+              colorFilter: const ColorFilter.mode(
+                  Color.fromARGB(255, 236, 236, 232), BlendMode.srcOver)),
+          Text(
+            'Vote Blanc',
+            style: GoogleFonts.bebasNeue(
+              textStyle: const TextStyle(
+                fontSize: 34,
+                color: Color.fromARGB(255, 35, 35, 35),
               ),
             ),
+          ),
         ],
       ),
     );

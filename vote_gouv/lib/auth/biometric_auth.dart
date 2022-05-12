@@ -37,11 +37,12 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
         // Handle this exception here.
       }
     }
-    if (!mounted) return;
-
-    setState(() {
-      _isUserAuthorized = isAuthorized;
-    });
+    if (mounted) {
+      setState(() {
+        _isUserAuthorized = isAuthorized;
+      });
+    }
+    return;
   }
 
   String url =
@@ -71,10 +72,10 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
     Timer.periodic(const Duration(seconds: 1), (timer) {
       if (greeting <= 0) {
         setState(() {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage()));
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const MyHomePage()));
         });
-      }
-      else {
+      } else {
         setState(() {
           greeting--;
         });
