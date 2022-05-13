@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vote_gouv/constants/colors.dart';
 import 'package:vote_gouv/constants/style.dart';
 
@@ -15,7 +17,7 @@ class DetailScreen extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.black, //change your color here
         ),
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         elevation: 0.0,
       ),
       body: Stack(
@@ -39,7 +41,7 @@ class DetailScreen extends StatelessWidget {
                 height: size.height / 2.2,
                 width: size.width,
                 decoration: BoxDecoration(
-                  color: AppColor.secondary,
+                  color: Color.fromARGB(255, 223, 222, 226),
                   borderRadius: BorderRadius.circular(34),
                 ),
                 child: Padding(
@@ -73,17 +75,18 @@ class DetailScreen extends StatelessWidget {
                       const Text(
                         'Le vote blanc consiste à déposer dans l’urne une enveloppe vide ou contenant un bulletin dépourvu de tout nom de candidat (ou de toute indication dans le cas d’un référendum). Ce type de vote indique une volonté de se démarquer du choix proposé par l’élection.',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 85, 85, 85),
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      const SizedBox(height: 20,),
                       const Spacing(),
                       Center(
                           child: ElevatedButton(
                               style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all(
-                                      AppColor.primary),
+                                      Color.fromARGB(255, 0, 0, 0)),
                                   shape: MaterialStateProperty.all(
                                       RoundedRectangleBorder(
                                           borderRadius:
@@ -91,11 +94,11 @@ class DetailScreen extends StatelessWidget {
                                   minimumSize: MaterialStateProperty.all(
                                       Size(size.width / 1.4, 37))),
                               onPressed: () async {
-                                /*if (await canLaunch(url)){
+                                if (await canLaunch(url)){
                                   await launch(url);
                                 } else {
                                   throw 'Could not launch $url';
-                                }*/
+                                }
                               },
                               child: Text('Voir le site du Gouvernement',
                                   style: AppStyle.h3
@@ -128,7 +131,7 @@ class TabTitle extends StatelessWidget {
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             label,
-            style: AppStyle.text.copyWith(color: Colors.white),
+            style: AppStyle.text.copyWith(color: Color.fromARGB(255, 0, 0, 0)),
           ),
           const SizedBox(
             height: 4,
@@ -137,7 +140,7 @@ class TabTitle extends StatelessWidget {
             Container(
               width: 21,
               height: 2,
-              decoration: const BoxDecoration(color: AppColor.primary),
+              decoration: const BoxDecoration(color: Color.fromARGB(255, 0, 0, 0)),
             )
         ])
       ],
@@ -197,11 +200,11 @@ class RectButton extends StatelessWidget {
       width: 32,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(9),
-          border: Border.all(color: AppColor.primary)),
+          border: Border.all(color: Color.fromARGB(255, 0, 0, 0))),
       child: Center(
           child: Text(
         label,
-        style: AppStyle.text.copyWith(color: Colors.white),
+        style: AppStyle.text.copyWith(color: Color.fromARGB(255, 0, 0, 0)),
       )),
     );
   }
@@ -218,18 +221,23 @@ class NameOfCandidate extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'Pourquoi voté blanc ?',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+        Text(
+          'Pourquoi voter blanc ?',
+          style: GoogleFonts.bebasNeue(
+            textStyle: const TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 28,
+            )
           ),
         ),
         Text(
           '152 ans',
-          style: AppStyle.h2
-              .copyWith(color: AppColor.primary, fontWeight: FontWeight.w600),
+          style: GoogleFonts.bebasNeue(
+            textStyle: const TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 34,
+            )
+          ),
         ),
       ],
     );

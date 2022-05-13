@@ -197,7 +197,7 @@ class _ListCandidateState extends State<ListCandidate> {
             ),
             const SizedBox(height: 25),
             MyBlankCard(
-                    name: 'Pourquoi Voté blanc ?',
+                    name: 'Pourquoi Voter blanc ?',
                     onTap: () {
                       Navigator.push(
                           context,
@@ -205,6 +205,8 @@ class _ListCandidateState extends State<ListCandidate> {
                               builder: (context) =>
                                   const DetailScreen()));
                     }),
+
+  
             for (int i = 0; i < listCard.length; i++)
               listCard.elementAt(i),
           ],

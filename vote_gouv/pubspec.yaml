@@ -46,6 +46,7 @@ dependencies:
   local_auth: ^2.0.1
   flutter_web3: ^2.1.9
   provider: ^6.0.2
+  url_launcher: ^5.2.7
 
 
 dev_dependencies:
@@ -88,7 +89,6 @@ flutter:
      - assets/images/européennes.jpg
      - assets/images/municipales.jpg
      - assets/images/white.jpg
-     - assets/images/voteblanc.jpeg
      - assets/images/vote_blanc.jpg
   #   - images/a_dot_ham.jpeg
 
