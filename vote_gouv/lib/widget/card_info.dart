@@ -72,13 +72,13 @@ class MyBlankCard extends StatelessWidget {
               height: 180,
               fit: BoxFit.cover,
               colorFilter: const ColorFilter.mode(
-                  Color.fromARGB(255, 236, 236, 232), BlendMode.srcOver)),
+                  Color.fromARGB(255, 222, 222, 222), BlendMode.srcOver)),
           Text(
             name,
             style: GoogleFonts.bebasNeue(
               textStyle: const TextStyle(
                 fontSize: 34,
-                color: Color.fromARGB(255, 35, 35, 35),
+                color: Colors.white,
               ),
             ),
           ),
