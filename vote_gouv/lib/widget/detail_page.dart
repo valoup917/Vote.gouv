@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vote_gouv/constants/colors.dart';
 import 'package:vote_gouv/constants/style.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({Key? key}) : super(key: key);
@@ -92,11 +91,11 @@ class DetailScreen extends StatelessWidget {
                                   minimumSize: MaterialStateProperty.all(
                                       Size(size.width / 1.4, 37))),
                               onPressed: () async {
-                                if (await canLaunch(url)){
+                                /*if (await canLaunch(url)){
                                   await launch(url);
                                 } else {
                                   throw 'Could not launch $url';
-                                }
+                                }*/
                               },
                               child: Text('Voir le site du Gouvernement',
                                   style: AppStyle.h3
