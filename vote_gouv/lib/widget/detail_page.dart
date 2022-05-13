@@ -28,9 +28,9 @@ class DetailScreen extends StatelessWidget {
               width: size.width,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      alignment: Alignment.bottomRight,
+                      alignment: Alignment.topCenter,
                       fit: BoxFit.cover,
-                      image: AssetImage('assets/images/voteblanc.jpeg'))),
+                      image: AssetImage('assets/images/vote_blanc.jpg'))),
             ),
           ),
           Positioned(
