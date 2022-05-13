@@ -7,7 +7,8 @@ class MyCard extends StatelessWidget {
       required this.imagelink,
       required this.name,
       required this.color,
-      required this.onTap, required this.id})
+      required this.onTap,
+      required this.id})
       : super(key: key);
 
   final AssetImage imagelink;
@@ -49,8 +50,9 @@ class MyCard extends StatelessWidget {
 }
 
 class MyBlankCard extends StatelessWidget {
-  const MyBlankCard({Key? key, required this.onTap}) : super(key: key);
+  const MyBlankCard({Key? key, required this.onTap, required this.name}) : super(key: key);
 
+  final String name;
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
@@ -72,7 +74,7 @@ class MyBlankCard extends StatelessWidget {
               colorFilter: const ColorFilter.mode(
                   Color.fromARGB(255, 236, 236, 232), BlendMode.srcOver)),
           Text(
-            'Vote Blanc',
+            name,
             style: GoogleFonts.bebasNeue(
               textStyle: const TextStyle(
                 fontSize: 34,

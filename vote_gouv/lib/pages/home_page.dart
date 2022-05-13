@@ -7,6 +7,7 @@ import 'package:vote_gouv/pages/ResultPage.dart';
 import 'package:vote_gouv/pages/connected_page.dart';
 import 'package:vote_gouv/pages/vote_page.dart';
 import 'package:vote_gouv/widget/bottom_nav_bar.dart';
+import 'package:vote_gouv/widget/detail_page.dart';
 import 'candidat_page.dart';
 import '../widget/card_info.dart';
 
@@ -195,6 +196,15 @@ class _ListCandidateState extends State<ListCandidate> {
               ),
             ),
             const SizedBox(height: 25),
+            MyBlankCard(
+                    name: 'Pourquoi Voté blanc ?',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const DetailScreen()));
+                    }),
             for (int i = 0; i < listCard.length; i++)
               listCard.elementAt(i),
           ],

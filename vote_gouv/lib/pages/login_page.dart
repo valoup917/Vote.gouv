@@ -129,7 +129,6 @@ class _LoginState extends State<Login> {
               const SizedBox(
                 height: 70,
               ),
-              const Text('New User? Create Account')
             ],
           ),
         ),

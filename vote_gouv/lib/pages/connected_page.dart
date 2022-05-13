@@ -23,7 +23,7 @@ class ConnectedPage extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const MyMelenchonPage()));
+                    builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 2,
@@ -32,7 +32,7 @@ class ConnectedPage extends StatelessWidget {
           color: pBlackBlue,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyMarinePage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 3,
@@ -43,7 +43,7 @@ class ConnectedPage extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const MyNathaliePage()));
+                    builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 4,
@@ -52,7 +52,7 @@ class ConnectedPage extends StatelessWidget {
           color: pClearBlue,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyNicolasPage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 5,
@@ -61,7 +61,7 @@ class ConnectedPage extends StatelessWidget {
           color: pClearRed,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyAnnePage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 6,
@@ -70,7 +70,7 @@ class ConnectedPage extends StatelessWidget {
           color: pClearGreen,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyYannickPage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 7,
@@ -79,7 +79,7 @@ class ConnectedPage extends StatelessWidget {
           color: pClearBlue,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyJeanPage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 8,
@@ -90,7 +90,7 @@ class ConnectedPage extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const MyEmmanuelPage()));
+                    builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 9,
@@ -99,7 +99,7 @@ class ConnectedPage extends StatelessWidget {
           color: pBlackBlue,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyValeriePage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 10,
@@ -110,7 +110,7 @@ class ConnectedPage extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const MyPhilippePage()));
+                    builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 11,
@@ -119,7 +119,7 @@ class ConnectedPage extends StatelessWidget {
           color: pClearRed,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyFabienPage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
       MyCard(
           id: 12,
@@ -128,7 +128,7 @@ class ConnectedPage extends StatelessWidget {
           color: pBlackBlue,
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyZemmourPage()));
+                MaterialPageRoute(builder: (context) => const BiometricAuthentication()));
           }),
     ]..shuffle();
     return Scaffold(
@@ -157,6 +157,15 @@ class ConnectedPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 25),
+                MyBlankCard(
+                    name: 'Vote Blanc',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const BiometricAuthentication()));
+                    }),
                 for (int i = 0; i < listCard.length; i++)
                   listCard.elementAt(i),
               ],

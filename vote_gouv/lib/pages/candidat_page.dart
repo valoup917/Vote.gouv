@@ -262,3 +262,14 @@ class _MyZemmourPage extends State<MyZemmourPage> {
       );
   }
 }
+
+class WhiteVote extends StatelessWidget {
+  const WhiteVote({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
+  }
+}

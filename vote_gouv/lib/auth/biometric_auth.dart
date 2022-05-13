@@ -37,12 +37,11 @@ class _BiometricAuthenticationState extends State<BiometricAuthentication> {
         // Handle this exception here.
       }
     }
-    if (mounted) {
+    if (this.mounted) {
       setState(() {
         _isUserAuthorized = isAuthorized;
       });
     }
-    return;
   }
 
   String url =

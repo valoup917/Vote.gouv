@@ -99,7 +99,7 @@ class _LaunchAnimPageState extends State<LaunchAnimPage>
                     opacity: isTextReady ? 1 : 0,
                     duration: const Duration(seconds: 2),
                     child: const Text(
-                      'Vote Easier',
+                      'Vot\'Chain',
                       style: TextStyle(
                         fontSize: 36.0,
                       ),
