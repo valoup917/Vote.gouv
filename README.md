@@ -1,4 +1,9 @@
 # :mortar_board: Hackaton_Starton
+
+<p align="center">
+    <img alt="mockup" title="mockup" src="./big asset.png" width="900">
+</p>
+
 ## :trophy: Goal of the Hackaton
 :heavy_check_mark: Realiser un projet qui vise à aider et à construire un avenir décentralisé.
 
